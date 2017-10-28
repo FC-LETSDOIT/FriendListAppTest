@@ -8,6 +8,8 @@
 
 import Foundation
 import RealmSwift
+
+//realmオブジェクトの定義(カラム名、主キーの設定)
 class FriendObject: Object{
     @objc dynamic var id = Int()
     @objc dynamic var name = String()
@@ -23,14 +25,12 @@ class FriendObject: Object{
 
 
 
-
+//DBへアクセスするオブジェクト（クラス）の定義
 class RealmBaseDao <T : RealmSwift.Object> {
     let realm: Realm
     init() {
         try! realm = Realm()
     }
-    
-    //as?はダウンキャストが成功するかわからない時に使用
     func newId() -> Int? {
         guard let key = T.primaryKey() else {
             return nil
@@ -42,12 +42,15 @@ class RealmBaseDao <T : RealmSwift.Object> {
             return 1
         }
     }
+    //keyを与えて対応するオブジェクト(レコード)を取得する
     func find(key: AnyObject) -> T? {
         return realm.object(ofType: T.self, forPrimaryKey: key)
     }
+    //全てのオブジェクト(レコード)を取得
     func findAll() -> Results<T> {
         return realm.objects(T.self)
     }
+    //レコードを追加
     func add(d :T) {
         do {
             try realm.write {
@@ -57,7 +60,7 @@ class RealmBaseDao <T : RealmSwift.Object> {
             print(error.description)
         }
     }
-    //変更
+    //特定のレコードを変更
     func update(d: T, block:(() -> Void)? = nil) -> Bool {
         do {
             try realm.write {
@@ -70,6 +73,7 @@ class RealmBaseDao <T : RealmSwift.Object> {
         }
         return false
     }
+    //特定のレコードを削除
     func delete(d: T) {
         do {
             try realm.write {
@@ -79,6 +83,7 @@ class RealmBaseDao <T : RealmSwift.Object> {
             print(error.description)
         }
     }
+    //全てのレコードを削除
     func deleteAll() {
         let objs = realm.objects(T.self)
         do {

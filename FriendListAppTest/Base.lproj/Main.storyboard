@@ -4,7 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -168,35 +168,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vgd-ri-XCJ">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vgd-ri-XCJ">
                                 <rect key="frame" x="16" y="269" width="343" height="436"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="JMY-Do-pxN">
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="JMY-Do-pxN">
                                         <rect key="frame" x="111" y="40" width="121" height="29"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="121" id="c3D-u9-qnR"/>
+                                        </constraints>
                                         <segments>
                                             <segment title="M"/>
                                             <segment title="F"/>
                                         </segments>
                                     </segmentedControl>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oVz-82-zkF">
+                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oVz-82-zkF">
                                         <rect key="frame" x="108" y="174" width="124" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="getText:" destination="GW9-Fd-QB4" eventType="editingDidEndOnExit" id="Z3m-cJ-caF"/>
+                                        </connections>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wfX-QE-S8Q">
+                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wfX-QE-S8Q">
                                         <rect key="frame" x="108" y="248" width="124" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="getText:" destination="GW9-Fd-QB4" eventType="editingDidEndOnExit" id="aiP-To-rpj"/>
+                                        </connections>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="性別" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3fn-nJ-8wx">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="性別" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3fn-nJ-8wx">
                                         <rect key="frame" x="38" y="47" width="42" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -234,15 +238,29 @@
                                             <action selector="registBtn:" destination="9pv-A4-QxB" eventType="touchUpInside" id="KLZ-ri-xRd"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z4J-XI-hXn">
+                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z4J-XI-hXn">
                                         <rect key="frame" x="108" y="100" width="124" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="getText:" destination="GW9-Fd-QB4" eventType="editingDidEndOnExit" id="jZl-qp-2AD"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="JMY-Do-pxN" firstAttribute="leading" secondItem="3fn-nJ-8wx" secondAttribute="trailing" constant="31" id="5HZ-Cd-CdX"/>
+                                    <constraint firstAttribute="bottom" secondItem="JMY-Do-pxN" secondAttribute="bottom" constant="368" id="9es-II-5hL"/>
+                                    <constraint firstItem="JMY-Do-pxN" firstAttribute="trailing" secondItem="Z4J-XI-hXn" secondAttribute="trailing" id="Icg-0D-Lnp"/>
+                                    <constraint firstItem="JMY-Do-pxN" firstAttribute="bottom" secondItem="3fn-nJ-8wx" secondAttribute="bottom" id="M5z-wV-Uuj"/>
+                                    <constraint firstItem="JMY-Do-pxN" firstAttribute="top" secondItem="Vgd-ri-XCJ" secondAttribute="top" constant="40" id="VYi-fs-2Y0"/>
+                                    <constraint firstItem="JMY-Do-pxN" firstAttribute="trailing" secondItem="wfX-QE-S8Q" secondAttribute="trailing" id="dvv-54-pBU"/>
+                                    <constraint firstItem="Z4J-XI-hXn" firstAttribute="top" secondItem="JMY-Do-pxN" secondAttribute="bottom" constant="32" id="p8W-Rn-a7E"/>
+                                    <constraint firstItem="JMY-Do-pxN" firstAttribute="centerX" secondItem="Vgd-ri-XCJ" secondAttribute="centerX" id="pmp-t7-iM4"/>
+                                    <constraint firstAttribute="trailing" secondItem="JMY-Do-pxN" secondAttribute="trailing" constant="111" id="u2r-gI-6i8"/>
+                                    <constraint firstItem="JMY-Do-pxN" firstAttribute="trailing" secondItem="oVz-82-zkF" secondAttribute="trailing" id="yfK-ix-FQX"/>
+                                </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a59-uw-QI9">
                                 <rect key="frame" x="124" y="228" width="119" height="30"/>

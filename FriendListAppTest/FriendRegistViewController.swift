@@ -8,13 +8,8 @@
 
 import UIKit
 
-//class A:B->クラスAはBのデリゲートを批准する。(Bが誰かに"処理してほしい"ことをAが"自分がやります”と宣言)
-//例えば、UIImagePickerControllerでは画像をカメラロールから選んだ直後の処理（表示するなど）はプログラマーの意志に委ねたい。(imagePickerControllerが相当。メソッド名変更不可)
+
 class FriendRegistViewController:UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
-    
-    
-    
-    //画像を表示するビュー
     var registImage:UIImage?
     @IBOutlet weak var SampleImageView: UIImageView!
     @IBOutlet weak var GenderType: UISegmentedControl!    

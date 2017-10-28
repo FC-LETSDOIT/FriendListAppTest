@@ -10,11 +10,6 @@ import UIKit
 import Foundation
 import RealmSwift
 
-//オプショナル型宣言の?と!...例えばlet str:String? と宣言した場合、
-//このstrには文字列とnilを入力できる。しかし、このままstrを呼び出しても、
-//オプショナル型であるため、文字列として操作できない。そこで、呼び出す際は、
-//!strとしてアンラップする。（文字列型に戻す）
-//宣言時にlet str:String!としていた場合は、呼び出す時に!をつける必要がない
 
 class FriendListViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource{
     var selectedFriend:FriendObject?
@@ -60,7 +55,6 @@ class FriendListViewController: UIViewController ,UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView,didSelectRowAt indexPath: IndexPath) {
         let cell=tableView.cellForRow(at: indexPath) as! FriendTableViewCell
         self.selectedFriend=getFriend(id: cell.id!)
-//        checkFriend(id: self.friendID!)
         performSegue(withIdentifier: "goDetail", sender:nil)
     }
     
